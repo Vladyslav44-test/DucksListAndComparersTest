@@ -17,6 +17,7 @@ namespace DucksListAndComparersTest
                 new Duck() { Kind = KindOfDuck.Mallard, Size = 14 },
                 new Duck() { Kind = KindOfDuck.Loon, Size = 13 }
             };
+            ducks.Sort();
             PrintDucks(ducks);
         }
         public static void PrintDucks(List<Duck> ducks)
