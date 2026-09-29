@@ -18,11 +18,21 @@ namespace DucksListAndComparersTest
                 new Duck() { Kind = KindOfDuck.Loon, Size = 13 }
             };
             IComparer<Duck> sizeComparer = new DuckComparerBySize();
+            Console.WriteLine("\nSorting by size then kind\n");
             ducks.Sort(sizeComparer);
             PrintDucks(ducks);
-            Console.WriteLine();
             IComparer<Duck> kindComparer = new DuckComparerByKind();
+            Console.WriteLine("\nSorting by kind then size\n");
             ducks.Sort(kindComparer);
+            PrintDucks(ducks);
+            DuckComparer comparer = new DuckComparer();
+            comparer.SortBy = SortCriteria.KindThenSize;
+            Console.WriteLine("\nSorting by kind then size\n");
+            ducks.Sort(comparer);
+            PrintDucks(ducks);
+            comparer.SortBy = SortCriteria.SizeThenKind;
+            Console.WriteLine("\nSorting by size then kind\n");
+            ducks.Sort(comparer);
             PrintDucks(ducks);
         }
         public static void PrintDucks(List<Duck> ducks)
