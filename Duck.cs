@@ -15,5 +15,9 @@ namespace DucksListAndComparersTest
             else if (this.Size < duckToCompare.Size) return -1;
             return 0;
         }
+        public override string ToString()
+        {
+            return $"A {Size} inch {Kind}";
+        }
     }
 }
